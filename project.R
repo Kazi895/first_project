@@ -4,9 +4,9 @@ library(mxnet)
 
 
 #Importing the dataset
-train <- data.matrix(read.csv("C://Users//kazi7427//Downloads//PROJECT CODINGS//mnist_train.csv", header=T))
+train <- data.matrix(read.csv("C://Users//Downloads//PROJECT CODINGS//mnist_train.csv", header=T))
 dim(train[,-1])
-test <- data.matrix(read.csv("C://Users//kazi7427//Downloads//PROJECT CODINGS//mnist_test.csv", header=T))
+test <- data.matrix(read.csv("C://Users//Downloads//PROJECT CODINGS//mnist_test.csv", header=T))
 dim(test[,-1])
 ########################################################################
 
@@ -53,8 +53,6 @@ m1.act2 <- mx.symbol.Activation(m1.fc2, name="activation2", act_type="relu")
 
 m1.fc3 <- mx.symbol.FullyConnected(m1.act2, name="fc3", num_hidden=10)
 m1.softmax <- mx.symbol.SoftmaxOutput(m1.fc3, name="softMax")
-
-graph.viz(m1.softmax)
 
 
 log <- mx.metric.logger$new() #to keep track of the results each iterration
